@@ -1,23 +1,28 @@
 #include "data.h"
-struct zamglai player1;
+extern int choiced_class;
 
-/*static char *name[] = player1.name;*/
+char player_name[30];
+char player_class[MAXCLASSES];
+int player_cash = 0;
+int player_hp = 0;
+int player_exp = 0;
 
 int main(void) {
   system("clear");
-  printf("ТЕСТОВЫЙ ВХОД В ИГРУ!\n\n\n\n\n\n\n\n\n\n\n\n");
   printf("Добро Пожаловать в RPG_NAME!");
   printf("\n\n\n\nВведите имя персонажа:");
-  scanf("%s", player1.name);
+  //scanf("%s", &player_name[]);
+  player_name[30] = "name";
   choice_class_player();
-  printf("\n\nИмя:%s Твой класс:%s\n\n", player1.name,  player1.class[player1.choiced_class]);
+  printf("\n\nИмя:%s Твой класс:%s", (char)player_name[30], (char)player_class[choiced_class]);
   /*sleep(3);*/
-  
+
   system("clear");
-  printf("Привет, %s!\n\n\n", player1.name);
-  /*glagne_menu();*/
-  
+  printf("Привет, %s!\n\n\n", player_name);
+  glagne_menu();
+
+  return 0;
 }
 
-  
+
 
