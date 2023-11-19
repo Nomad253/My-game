@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 #define MAXCLASSES 5
 #define ALLMONSTERS 3
 #define MAXLONGNAME 25

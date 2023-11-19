@@ -1,11 +1,12 @@
 #include "data.h"
-int choiced_class = 0;
+enum classes {TEST1, TEST2, TEST3, TEST4};
 
 extern char player_name[];
-extern char player_class[];
+extern char* class_choiced[];
 extern int player_cash;
 extern int player_hp;
 extern int player_exp;
+enum classes player_class;
 
 
 int glagne_menu(){
@@ -30,7 +31,7 @@ int glagne_menu(){
 	  cash_bug = 0;
 	}
       }
-      printf("\n\nИмя:%s\nКласс:%s\nОпыт:%d\nДеньги:%d\n", player_name[30], player_class[choiced_class], player_exp, player_cash);
+      printf("\n\nИмя:%s\nКласс:%s\nОпыт:%d\nДеньги:%d\n", player_name[MAXLONGNAME], class_choiced[player_class], player_exp, player_cash);
     }
     else if (a==3) {
       int korovan_cash;
@@ -44,40 +45,39 @@ int glagne_menu(){
 
 
   }
-   return 0;
 }
 
+bool t = false;
 
 int choice_class_player()
 {
-  for (int i, player_class_choice; i != 2 ; i = 1) {
-  player_hp = 100;
-  printf("\nВЫБОР КЛАССА (1 - TEST1, 2 - TEST2, 3 - TEST3, 4 - TEST4)\n\n\n\n");
-  printf("Выбери класс:");
-  scanf("%d", (int *)player_class_choice);
-  switch(player_class_choice) {
-  case 1:
-     choiced_class = 0;
-     player_class[0] = "TEST1";
-     i = 2;
-     break;
-  case 2:
-    choiced_class = 1;
-    player_class[1] = "TEST2";
-    i = 2;
-    break;
-  case 3:
-    choiced_class = 2;
-    player_class[2] = "TEST3";
-    i = 2;
-    break;
-  case 4:
-    choiced_class = 3;
-    player_class[3] = "TEST4";
-    i = 2;
-    break;
+  do {
+    printf("\nВЫБОР КЛАССА (1 - TEST1, 2 - TEST2, 3 - TEST3, 4 - TEST4)\n\n\n\n");
+    printf("Выбери класс:");
+    scanf("%d", &player_class);
+    switch(player_class) {
+    case TEST1:
+      player_hp = 50;
+      player_cash = 10;
+      t = true;
+      break;
+    case TEST2:
+      player_hp = 123;
+      player_cash = 231;
+      t = true;
+      break;
+    case TEST3:
+      player_hp = 1123;
+      player_cash = 2222;
+      t = true; 
+      break;
+    case TEST4:
+      player_hp = 122;
+      player_cash = 1111;
+      t = true;
+      break;
   }
-
-  }
+  } while (t == false);
+  printf("\n\nИмя:%s Твой класс:%s", player_name[MAXLONGNAME], class_choiced[player_class]);
   return 0;
 }
