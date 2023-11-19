@@ -1,4 +1,5 @@
 #include "data.h"
+
 extern char monster_name[];
 extern int monster_hp;
 extern int monster_atk;
@@ -16,7 +17,7 @@ int loser;
 int loot_cash;
 int loot_exp;
 
-int nabeg(){
+int nabegat(){
   printf("ТЕБЯ НАШЕЛ МОНСТР!!!1!!1!");
   randommonst();
   printf("monster_name=%s monster_hp=%d monster_atk=%d monster_def=%d monster=%d ", (char)monster_name[monster], monster_hp, monster_atk, monster_def, monster);

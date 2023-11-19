@@ -9,6 +9,8 @@ int player_exp = 0;
 int main(void) {
   strcpy(player_name, "name");
   choice_class_player();
+  system("clear");
+  glagne_menu();
   
   /* system("clear");
   printf("Добро Пожаловать в RPG_NAME!");
@@ -21,7 +23,7 @@ int main(void) {
 
   system("clear");
   printf("Привет, %s!\n\n\n", player_name);
-  glagne_menu();
+ 
 
   return 0;
 

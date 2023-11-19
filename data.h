@@ -11,7 +11,7 @@
 
 
 
-int nabeg();
+int nabegat();
 int randommonst();
 int choice_class_player();
 int glagne_menu();

@@ -1,4 +1,5 @@
 #include "data.h"
+
 enum classes {TEST1 = 1, TEST2, TEST3, TEST4};
 
 extern char player_name[];
@@ -11,14 +12,13 @@ enum classes player_class;
 
 int glagne_menu(){
   for (int a, choice_in_menu; choice_in_menu < 5; choice_in_menu = 0) {
-    system("clear");
     static int cash_bug;
     printf("ТЕСТ_МЕНЮ (1 - бой, 2 - характеристики, 3 - ограбить корован, 4 - выйти из игры) :");
     scanf("%d", &a);
 
     if (a == 1) {
       system("clear");
-      //nabeg();
+      nabegat();
     }
     else if (a==2) {
       if (cash_bug==2) {
