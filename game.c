@@ -7,7 +7,7 @@ int player_hp = 0;
 int player_exp = 0;
 
 int main(void) {
-  player_name[MAXLONGNAME] = "name";
+  strcpy(player_name, "name");
   choice_class_player();
   
   /* system("clear");
