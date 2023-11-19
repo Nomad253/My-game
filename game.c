@@ -1,7 +1,7 @@
 #include "data.h"
 
 char player_name[MAXLONGNAME];
-char* class_choiced[3] = {"TEST1", "TEST2", "TEST3", "TEST4"};
+char* class_choiced[5] = {"TEST0", "TEST1", "TEST2", "TEST3", "TEST4"};
 int player_cash = 0;
 int player_hp = 0;
 int player_exp = 0;

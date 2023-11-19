@@ -1,5 +1,5 @@
 #include "data.h"
-enum classes {TEST1, TEST2, TEST3, TEST4};
+enum classes {TEST1 = 1, TEST2, TEST3, TEST4};
 
 extern char player_name[];
 extern char* class_choiced[];
