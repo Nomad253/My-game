@@ -12,7 +12,11 @@
 
 
 int nabegat();
-int randommonst();
+int randommonst0();
+int randommonst1();
+int randommonst2();
+int randommonst3();
+int randommonst4();
 int choice_class_player();
 int glagne_menu();
 
