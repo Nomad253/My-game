@@ -1,17 +1,19 @@
 #include "data.h"
 
-char player_name[MAXLONGNAME];
+char player_name[25];
 char* class_choiced[5] = {"TEST0", "TEST1", "TEST2", "TEST3", "TEST4"};
 int player_cash = 0;
 int player_hp = 0;
 int player_exp = 0;
+int player_atk;
 
 int main(void) {
-  strcpy(player_name, "name");
+  printf("\n\n\n\nВведите имя персонажа:");
+  fgets(player_name, 25, stdin);
   choice_class_player();
   system("clear");
   glagne_menu();
-  
+
   /* system("clear");
   printf("Добро Пожаловать в RPG_NAME!");
   printf("\n\n\n\nВведите имя персонажа:");
@@ -23,7 +25,7 @@ int main(void) {
 
   system("clear");
   printf("Привет, %s!\n\n\n", player_name);
- 
+
 
   return 0;
 

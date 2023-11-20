@@ -31,7 +31,7 @@ int glagne_menu(){
 	  cash_bug = 0;
 	}
       }
-      printf("\n\nИмя:%s\nКласс:%s\nОпыт:%d\nДеньги:%d\n", player_name[MAXLONGNAME], class_choiced[player_class], player_exp, player_cash);
+      printf("\n\nИмя:%s\nКласс:%s\nОпыт:%d\nДеньги:%d\n", player_name[25], class_choiced[player_class], player_exp, player_cash);
     }
     else if (a==3) {
       int korovan_cash;
@@ -69,7 +69,7 @@ int choice_class_player()
     case TEST3:
       player_hp = 1123;
       player_cash = 2222;
-      t = true; 
+      t = true;
       break;
     case TEST4:
       player_hp = 122;
