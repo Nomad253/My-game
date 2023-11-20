@@ -1,6 +1,6 @@
 #include "data.h"
 
-char player_name[25];
+char player_name[25] = {"PLAYER_NAME"};
 char* class_choiced[5] = {"TEST0", "TEST1", "TEST2", "TEST3", "TEST4"};
 int player_cash = 0;
 int player_hp = 0;
@@ -8,8 +8,6 @@ int player_exp = 0;
 int player_atk;
 
 int main(void) {
-  printf("\n\n\n\nВведите имя персонажа:");
-  fgets(player_name, 25, stdin);
   choice_class_player();
   system("clear");
   glagne_menu();

@@ -17,7 +17,6 @@ int glagne_menu(){
     scanf("%d", &a);
 
     if (a == 1) {
-      system("clear");
       nabegat();
     }
     else if (a==2) {
