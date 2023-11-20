@@ -24,22 +24,28 @@ int loot_exp;
 int nabegat() {
   system("clear");
   printf("ТЕБЯ НАШЕЛ МОНСТР!!!1!!1!");
-  if(player_planet == 0){
+  switch(player_planet){
+  case 0:
   randommonst0();
-  }
-  if (player_planet == 1) {
+  break;
+
+  case 1:
   randommonst1();
-  }
-  else if (player_planet == 2) {
+  break;
+
+  case 2:
   randommonst2();
-  }
-  else if (player_planet == 3) {
+  break;
+
+  case 3:
   randommonst3();
-  }
-  else if (player_planet == 4) {
+  break;
+
+  case 4:
   randommonst4();
+  break;
   }
-  printf("monster_hp = %d, monster_atk = %d", monster_hp, monster_atk);
+  printf("monster_hp = %d, monster_atk = %d, monster_name:%s", monster_hp, monster_atk, monster_name[monster][player_planet]);
   for (int actions;  monster_live > 0 || player_hp > 0; actions = 0) {
     if((monster_hp <= 0)) {
     goto win2;
