@@ -24,7 +24,7 @@ int loot_exp;
 
 int nabegat() {
   system("clear");
-  printf("ТЕБЯ НАШЕЛ МОНСТР!!!1!!1!/n");
+  printf("ТЕБЯ НАШЕЛ МОНСТР!!!1!!1!\n");
   switch(player_planet){
   case 0:
   randommonst0();
@@ -46,7 +46,7 @@ int nabegat() {
   randommonst4();
   break;
   }
-  printf("monster_hp = %d, monster_atk = %d, monster_name:%s", monster_hp, monster_atk, monster_name[monster][player_planet]);
+  printf("monster_hp = %d, monster_atk = %d, monster_name:%s\n", monster_hp, monster_atk, monster_name[monster][player_planet]);
   for (int actions;  monster_live > 0 || player_hp > 0; actions = 0) {
     if((monster_hp <= 0)) {
     goto win2;
@@ -70,7 +70,6 @@ int nabegat() {
     loot_cash = rand() % 20;
     player_cash = player_cash - loot_cash;
     printf("Ты проиграл %d денег \n\n\n", loot_cash);
-    player_hp = 0 + player_class_hp;
    }
    win2: if (monster_hp <= 0 || monster_live == 0) {
     system("clear");
@@ -79,7 +78,6 @@ int nabegat() {
     printf("ПЕРЕМОГА!. Ты получил %d опыта и %d денег. MONSTER убит %s! \n\n\n\n\n", loot_exp, loot_cash, player_name[MAXLONGNAME]);
     player_cash = player_cash + loot_cash;
     player_exp = player_exp + loot_exp;
-    player_hp = 0 + player_class_hp;
    }
   return 0;
 }

@@ -22,11 +22,10 @@ int glagne_menu(){
     if (a == 1) {
       system("clear");
       nabegat();
-      player_hp = 0 + player_class_hp;
     }
     else if (a==2) {
 
-      printf("Имя:%s\nКласс:%s\nОпыт:%d\nДеньги:%d\nПланета:%s\n", player_name[25], class_choiced[player_class], player_exp, player_cash, planets_name[player_planet]);
+      printf("Имя:%s\nКласс:%s\nОпыт:%d\nЗдоровье:%d/%d\nАтака:%d\nДеньги:%d\nПланета:%s\n", player_name[25], class_choiced[player_class], player_exp, player_hp, player_class_hp, player_atk, player_cash, planets_name[player_planet]);
     }
     else if (a==3) {
       system("clear");
@@ -49,7 +48,7 @@ int glagne_menu(){
 	if(player_cash >= 500) {
 	player_cash = player_cash - 500;
 	player_atk = player_atk + 2;
-	printf("player_atk=%d", player_atk);
+	printf("player_atk=%d\n", player_atk);
 	}
 	else if(player_cash < 500) {
 	  printf("Тебе не хватает денег на покупку!\n");
@@ -60,14 +59,22 @@ int glagne_menu(){
 	if(player_cash >= 600) {
 	player_cash = player_cash - 600;
 	player_class_hp = player_class_hp + 20;
-	player_hp= player_class_hp;
-	printf("player_hp=%d", player_hp);
+	printf("player_class_hp=%d\n", player_class_hp);
 	}
 	else if(player_cash < 600) {
 	  printf("Тебе не хватает денег на покупку!\n");
 	}
 	break;
+      case 3:
+	if(player_cash >= 700 && player_hp < player_class_hp){
+	  player_hp = 0 + player_class_hp;
+	  printf("player_hp=%d\n", player_hp);
+	}
+	else if(player_cash <= 700 || player_hp == player_class_hp){
+	    printf("Тебе не хватает денег на покупку или ты здоров!\n");
       }
+	break;
+    }
     }
     else if (a==5) {
       choice_in_menu = 5;
