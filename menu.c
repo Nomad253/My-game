@@ -25,7 +25,7 @@ int glagne_menu(){
     }
     else if (a==2) {
 
-      printf("Имя:%s\nКласс:%s\nОпыт:%d\nЗдоровье:%d/%d\nАтака:%d\nДеньги:%d\nПланета:%s\n", player_name[25], class_choiced[player_class], player_exp, player_hp, player_class_hp, player_atk, player_cash, planets_name[player_planet]);
+      printf("Имя:%s\nКласс:%s\nОпыт:%d\nЗдоровье:%d\n%d\nАтака:%d\nДеньги:%d\nПланета:%s\n", player_name, class_choiced[player_class], player_exp, player_hp, player_class_hp, player_atk, player_cash, planets_name[player_planet]);
     }
     else if (a==3) {
       system("clear");
@@ -37,7 +37,7 @@ int glagne_menu(){
     else if (a==4) {
       system("clear");
       int trade;
-      printf("Торговец имеет у себя в наличии (1)увеличение атака(+2 ATK, 500$) , (2)увеличение здоровья(+20 HP, 600$), (0)НИЧЕГО НЕ ПОКУПАТЬ\nПокупать?:");
+      printf("Торговец имеет у себя в наличии (1)Увеличение атака(+2 ATK, 500$) , (2)Увеличение здоровья(+20 HP, 600$), (3)Вылечить персонажа, (0)НИЧЕГО НЕ ПОКУПАТЬ\nПокупать?:");
       scanf("%d", &trade);
       switch(trade) {
       case 0:
