@@ -8,17 +8,19 @@ extern char* class_choiced[];
 extern int player_cash;
 extern int player_hp;
 extern int player_exp;
-extern player_class_hp;
+extern int player_class_hp;
+extern int player_atk;
 enum planets player_planet;
 enum classes player_class;
 
 int glagne_menu(){
-  for (int a, choice_in_menu; choice_in_menu < 5; choice_in_menu = 0) {
-    printf("ТЕСТ_МЕНЮ (1 - бой, 2 - характеристики, 3 - ограбить корован, 4 - выйти из игры) :");
+  for (int a, choice_in_menu; choice_in_menu != 5; a = 0) {
+    printf("ТЕСТ_МЕНЮ (1 - бой, 2 - характеристики, 3 - ограбить корован, 4 - торговец, 5 - выйти из игры) :");
     scanf("%d", &a);
     system("clear");
 
     if (a == 1) {
+      system("clear");
       nabegat();
       player_hp = 0 + player_class_hp;
     }
@@ -27,13 +29,48 @@ int glagne_menu(){
       printf("Имя:%s\nКласс:%s\nОпыт:%d\nДеньги:%d\nПланета:%s\n", player_name[25], class_choiced[player_class], player_exp, player_cash, planets_name[player_planet]);
     }
     else if (a==3) {
+      system("clear");
       int korovan_cash;
       korovan_cash = rand()%1000;
       player_cash = player_cash + korovan_cash;
       printf("Ты ограбил корован на %d монет!\n", korovan_cash);
     }
     else if (a==4) {
-      return 228;
+      system("clear");
+      int trade;
+      printf("Торговец имеет у себя в наличии (1)увеличение атака(+2 ATK, 500$) , (2)увеличение здоровья(+20 HP, 600$), (0)НИЧЕГО НЕ ПОКУПАТЬ\nПокупать?:");
+      scanf("%d", &trade);
+      switch(trade) {
+      case 0:
+	system("clear");
+	break;
+      case 1:
+	system("clear");
+	if(player_cash >= 500) {
+	player_cash = player_cash - 500;
+	player_atk = player_atk + 2;
+	printf("player_atk=%d", player_atk);
+	}
+	else if(player_cash < 500) {
+	  printf("Тебе не хватает денег на покупку!\n");
+	}
+	break;
+      case 2:
+	system("clear");
+	if(player_cash >= 600) {
+	player_cash = player_cash - 600;
+	player_class_hp = player_class_hp + 20;
+	player_hp= player_class_hp;
+	printf("player_hp=%d", player_hp);
+	}
+	else if(player_cash < 600) {
+	  printf("Тебе не хватает денег на покупку!\n");
+	}
+	break;
+      }
+    }
+    else if (a==5) {
+      choice_in_menu = 5;
     }
   }
 }
@@ -51,24 +88,28 @@ int choice_class_player()
     switch(player_class) {
     case TEST1:
       player_planet = rand() % 5;
+      player_atk = 10;
       player_class_hp = 50;
       player_cash = 10;
       t = true;
       break;
     case TEST2:
       player_planet = rand() % 5;
+      player_atk = 5;
       player_class_hp = 123;
       player_cash = 231;
       t = true;
       break;
     case TEST3:
       player_planet = rand() % 5;
+      player_atk = 3;
       player_class_hp = 1123;
       player_cash = 2222;
       t = true;
       break;
     case TEST4:
       player_planet = rand() % 5;
+      player_atk = 2;
       player_class_hp = 122;
       player_cash = 1111;
       t = true;
@@ -76,5 +117,5 @@ int choice_class_player()
   }
   player_hp = player_class_hp;
   } while (t == false);
-  printf("\n\nИмя:%s Твой класс:%s", player_name[25], class_choiced[player_class]);
+  printf("\n\nИмя:%s Твой класс:%s", player_name[MAXLONGNAME], class_choiced[player_class]);
 }

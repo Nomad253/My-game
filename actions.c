@@ -14,8 +14,9 @@ extern char *player_class[];
 extern int player_cash;
 extern int player_hp;
 extern int player_exp;
-extern player_atk;
-extern player_class_hp;
+extern int player_atk;
+extern int player_class_hp;
+int player_atk_monster;
 
 int loser;
 int loot_cash;
@@ -23,7 +24,7 @@ int loot_exp;
 
 int nabegat() {
   system("clear");
-  printf("ТЕБЯ НАШЕЛ МОНСТР!!!1!!1!");
+  printf("ТЕБЯ НАШЕЛ МОНСТР!!!1!!1!/n");
   switch(player_planet){
   case 0:
   randommonst0();
@@ -50,11 +51,12 @@ int nabegat() {
     if((monster_hp <= 0)) {
     goto win2;
     }
-    printf("\n\nДействия   (1 - удар, 2 - бежать)   :");
+    printf("Действия   (1 - удар, 2 - бежать)   :");
     scanf("%d", &actions);
     switch (actions) {
      case 1:
-       player_atk = rand() % 5;
+       system("clear");
+       player_atk_monster = rand() % player_atk;
        monster_hp = monster_hp - player_atk;
        player_hp = player_hp - monster_atk;
        printf("\n player_atk=%d monster_hp = %d \n monster_atk = %d player_hp = %d \n", player_atk, monster_hp, monster_atk, player_hp);
